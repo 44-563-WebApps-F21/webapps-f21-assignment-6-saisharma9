@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<title>Learning JS</title>
+ 
+<body>
+
+<h2>Pass phrase by Sai Sharma</h2>
+
+<form>
+    <label for="form1_age">Enter the secret phrase </label>
+    <input type ="password" id="form1_age" name="SecretPhrase" min=10 max=50 step=2 value="Let me in"> <br>
+
+    <label for="form1_nick">Enter a phrase </label>
+    <input type ="text" id="form1_nick" name="phrase" autofocus> <br>
+
+    <input type="button" onclick="processPhrase()" value="Check the phrase">
+
+    <p id="result">This text will be replaced </p>
+</form>
+
+
+
+
+<script> 
+let correct = 0
+let wrong = 0
+function processPhrase (){
+    console.log("Getting form values")
+    SecretPhrase = document.getElementById("form1_age").value
+    Phrase = document.getElementById("form1_nick").value
+    
+    out = document.getElementById("result")
+    if(SecretPhrase == Phrase){
+        alert("Access allowed")
+        correct++;
+        out.innerHTML = "Correct : " + correct + " Wrong : " + wrong;
+        
+    } else {
+        alert("Access denied")
+        wrong++;
+        out.innerHTML = "Correct : " + correct + " Wrong : " + wrong;
+    }
+}
+</script>
+
+</body>
+</html> 
