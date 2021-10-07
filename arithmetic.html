@@ -16,10 +16,35 @@
     <input type ="number" id="form2_exponent" name="form2_exponent" autofocus> <br>
 
     <input type="button" onclick="powers()" value="Compute">
+    <br>
+    <div>Result: <span id="infoSpan"></span></div>
+    <br>
+    <br>
+
+
+    <input type="radio" id="rg1_plus" name="opr" value="plus"   
+    onclick="processRadio()" >
+  <label for="rg1_red">+</label></br>
+
+  <input type="radio" id="rg1_minus" name="opr" 
+     value="minus" onclick="processRadio()">
+  <label for="rg1_blue">-</label></br>
+
+  <input type="radio" id="rg1_times" name="opr"   
+     value="times" onclick="processRadio()">
+  <label for="rg1_green">*</label></br>
+
+  <input type="radio" id="rg1_divide" name="opr"   
+  value="divide" onclick="processRadio()">
+<label for="rg1_green">/</label></br>
+
+ 
 </form>
 
 
-<div>Result: <span id="infoSpan"></span></div>
+
+
+<p id="Arthematic">After Arithmetic Operations</p>
 
 <script> 
 
@@ -36,6 +61,33 @@ function powers(){
     }
     document.getElementById('infoSpan').innerHTML=result;
   
+}
+
+function processRadio()
+{
+    base = document.getElementById("form2_base").value;
+    exponent = document.getElementById("form2_exponent").value;
+
+    base = Number(base);
+    exponent = Number(exponent);
+
+            let updated = document.getElementById("Arthematic")
+            let result = 0;
+            
+            if(document.getElementById("rg1_plus").checked){
+                result= base+exponent;
+            }
+            else if(document.getElementById("rg1_minus").checked){
+                result= base-exponent;
+            }
+            else if(document.getElementById("rg1_times").checked){
+                result= base*exponent;
+            }
+            else if(document.getElementById("rg1_divide").checked){
+                result= base/exponent;
+            }
+            updated.innerHTML="Result of the operation are: " + result;
+
 }
 </script>
 
