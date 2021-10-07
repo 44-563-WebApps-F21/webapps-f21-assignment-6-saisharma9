@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Want Maths?</title>
+    </head>
+ 
+<body>
+
+<h2>Sai Sharma computes</h2>
+
+<form>
+    <label for="form2_base">Enter a base</label>
+    <input type ="number" id="form2_base" name="form2_base" min=10 max=50 step=2 value=10> <br>
+
+    <label for="form2_exponent">Enter an exponent </label>
+    <input type ="number" id="form2_exponent" name="form2_exponent" autofocus> <br>
+
+    <input type="button" onclick="powers()" value="Compute">
+</form>
+
+
+<div>Result: <span id="infoSpan"></span></div>
+
+<script> 
+
+function powers(){
+    
+    base = document.getElementById("form2_base").value;
+    exponent = document.getElementById("form2_exponent").value;
+    var result="";
+   
+    for(var i=1;i<=exponent;i++)
+    {
+        result= result+ " " + Math.pow(base,i);
+       
+    }
+    document.getElementById('infoSpan').innerHTML=result;
+  
+}
+</script>
+
+</body>
+</html> 
